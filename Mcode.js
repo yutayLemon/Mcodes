@@ -25,6 +25,13 @@ document.querySelector(".inp").addEventListener("keyup",()=>{
                                                 Up();
                                                 });
 
+document.querySelector("body").addEventListener("keydown",()=>{
+                                                Down();
+                                                });
+document.querySelector("body").addEventListener("keyup",()=>{
+                                                Up();
+                                                });
+
 function Down(){
     if(sound == undefined){
         
