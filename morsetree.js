@@ -1,59 +1,56 @@
-function NewNode(dash,dot,terminate){
-    this.dash = dash;
-    this.dot = dot;
-    this.terminate = terminate;
-}
-
-var codes = [];
-codes[0] = new NewNode(1,2,"");
-codes[1] = new NewNode(3,4,"t");//-
-codes[2] = new NewNode(5,6,"e");//.
-codes[3] = new NewNode(7,8,"m");//--
-codes[4] = new NewNode(9,10,"n");//-.
-codes[5] = new NewNode(11,12,"a");//.-
-codes[6] = new NewNode(13,14,"i");//..
-codes[7] = new NewNode(undefined,undefined,"o");//---
-codes[8] = new NewNode(15,16,"g");//--.
-codes[9] = new NewNode(17,18,"k");//-.-
-codes[10] = new NewNode(26,19,"d");//-..
-codes[11] = new NewNode(20,21,"w");//.--
-codes[12] = new NewNode(undefined,22,"r");//.-.
-codes[13] = new NewNode(undefined,23,"u");//..-
-codes[14] = new NewNode(24,25,"s");//...
-codes[15] = new NewNode(undefined,undefined,"q");//--.-
-codes[16] = new NewNode(undefined,undefined,"z");//--..
-codes[17] = new NewNode(undefined,undefined,"y");//-.--
-codes[18] = new NewNode(undefined,undefined,"c");//-.-.
-codes[19] = new NewNode(undefined,undefined,"b");//-...
-codes[20] = new NewNode(undefined,undefined,"j");//.---
-codes[21] = new NewNode(undefined,undefined,"p");//.--.
-codes[22] = new NewNode(undefined,undefined,"l");//.-..
-codes[23] = new NewNode(undefined,undefined,"f");//..-.
-codes[24] = new NewNode(undefined,undefined,"v");//...-
-codes[25] = new NewNode(undefined,undefined,"h");//....
-codes[26] = new NewNode(undefined,undefined,"x");//-..-
-codes[27] = new NewNode(10,11,"");
-
-function serch(directions){
-    var currentNode = codes[0];
-    for(var i =0;i<directions.length;i++){
-        console.log(currentNode);
-        if(directions[i] == "."){
-            if(codes[currentNode.dot] == undefined){
-                return false;
-            }else{
-                currentNode = codes[currentNode.dot];
-            }
-        }else if(directions[i] == '-'){
-            if(codes[currentNode.dash] == undefined){
-                return false;
-            }else{
-                currentNode = codes[currentNode.dash];
-            }
-        }else{
-            return currentNode.terminate;
-        }
-    }
-}
-
-serch([".","-","s"]);
+var binM2Char = [];
+//. 0
+//- 1
+binM2Char[1] = " ";
+//.- a        011               6
+binM2Char[6] = "a";
+//-... b      10001             17
+binM2Char[17] = "b";
+//-.-. c      10101             21
+binM2Char[21] = "c";
+//-.. d       1001              9
+binM2Char[9] = "d";
+//. e         01                2
+binM2Char[2] = "e";
+//..-. f      00101             20
+binM2Char[20] = "f";
+//--. g       1101              11
+binM2Char[11] = "g";
+//.... h      00001             16
+binM2Char[16] = "h";
+//.. i        001               4
+binM2Char[4] = "i";
+//.--- j      01111             30
+binM2Char[30] = "j";
+//-.- k       1011              13
+binM2Char[13] = "k";
+//.-.. l      01001             18
+binM2Char[18] = "l";
+//-- m        111               7
+binM2Char[7] = "m";
+//-. n        101               5
+binM2Char[5] = "n";
+//--- o       1111              15
+binM2Char[15] = "o";
+//.--. p      01101             22
+binM2Char[22] = "p";
+//--.- q      11011             27
+binM2Char[27] = "q";
+//.-. r       0101              10
+binM2Char[10] = "r";
+//... s       0001              8
+binM2Char[8] = "s";
+//- t         11                3
+binM2Char[3] = "t";
+//..- u       0011              12
+binM2Char[12] = "u";
+//...- v      00011             24
+binM2Char[24] = "v";
+//.--w        0111              14
+binM2Char[14] = "w";
+//-..- x      10011             25
+binM2Char[25] = "x";
+//-.-- y      10111             29
+binM2Char[29] = "y";
+//--.. z      11001             19
+binM2Char[19] = "z";
