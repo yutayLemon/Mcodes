@@ -80,7 +80,7 @@ function SWPDiagonal(){
 }
 
 function SWPLeft(){
-    
+    SWPRight()
 }
 
 function SWPDown(){
@@ -88,5 +88,5 @@ function SWPDown(){
 }
 
 function SWPUp(){
-    
+    SWPDiagonal();
 }
